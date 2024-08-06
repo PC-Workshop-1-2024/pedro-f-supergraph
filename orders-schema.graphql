@@ -27,6 +27,14 @@ type Order @key(fields: "id") {
   product and which size/color/feature was bought
   """
   items: [ProductVariant!]! @requiresScopes(scopes: [["order:items"]])
+  """
+  Total amount for purchase
+  """
+  total: Float
+  """
+  The date when the order was placed
+  """
+  orderDate: String
 }
 
 type User @key(fields: "id", resolvable: false) {
